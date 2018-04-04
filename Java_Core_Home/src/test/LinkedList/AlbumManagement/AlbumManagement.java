@@ -1,4 +1,4 @@
-package LinkedList.AlbumManagement;
+package test.LinkedList.AlbumManagement;
 
 import java.util.ArrayList;
 import java.util.Iterator;

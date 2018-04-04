@@ -1,4 +1,4 @@
-package arrraylist.mobiphone;
+package test.arrraylist.mobiphone;
 
 import java.util.Scanner;
 

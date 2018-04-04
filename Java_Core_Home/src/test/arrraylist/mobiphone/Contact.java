@@ -1,4 +1,4 @@
-package arrraylist.mobiphone;
+package test.arrraylist.mobiphone;
 
 public class Contact {
 	private String sTenTaiKhoan;

@@ -1,4 +1,4 @@
-package LinkedList.AlbumManagement;
+package test.LinkedList.AlbumManagement;
 
 public class Song {
 	private String sTitle;

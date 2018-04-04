@@ -5,4 +5,4 @@
  * @author Admin
  *
  */
-package arrraylist.mobiphone;
+package test.LinkedList.AlbumManagement;
