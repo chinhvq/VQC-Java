@@ -2,11 +2,12 @@ package LinkedList.AlbumManagement;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Album {
 	private String sSongName;
 	private String sArtist;
-	private ArrayList<Song> listSong;
+	private List<Song> listSong;
 	
 	protected Album(String sSongName, String sArtist) {
 		this.sSongName = sSongName;
@@ -24,7 +25,7 @@ public class Album {
 		}
 	}
 	
-	protected boolean addSongToPlayList(int nTrackNumber, LinkedList<Song> listPlayList) {
+	protected boolean addSongToPlayList(int nTrackNumber, List<Song> listPlayList) {
 		int nIndex = nTrackNumber - 1;
 		if (nIndex >= 0 && nIndex <= listSong.size()) {
 			listPlayList.add(listSong.get(nIndex));
@@ -35,7 +36,7 @@ public class Album {
 		}		
 	}
 	
-	protected boolean addSongToPlayList(String sTitle, LinkedList<Song> listPlayList) {
+	protected boolean addSongToPlayList(String sTitle, List<Song> listPlayList) {
 		Song checkedSong = findSong(sTitle);
 		if(checkedSong != null) {
 			listPlayList.add(checkedSong);

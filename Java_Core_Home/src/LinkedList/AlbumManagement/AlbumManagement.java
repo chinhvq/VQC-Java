@@ -3,12 +3,13 @@ package LinkedList.AlbumManagement;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ListIterator;
 import java.util.Scanner;
 
 public class AlbumManagement {
 
-	private static ArrayList<Album> listAlbums = new ArrayList<Album>();
+	private static List<Album> listAlbums = new ArrayList<Album>();
 
 	public static void main(String[] args) {
 		Album album = new Album("The Eminem Show", "Eminem");
@@ -39,7 +40,7 @@ public class AlbumManagement {
 		album.addSong("Damage, Inc.", (5 + 32 / 60));
 		listAlbums.add(album);
 
-		LinkedList<Song> listPlayList = new LinkedList<Song>();
+		List<Song> listPlayList = new LinkedList<Song>();
 		listAlbums.get(0).addSongToPlayList("White America", listPlayList);
 		listAlbums.get(0).addSongToPlayList("Superman", listPlayList);
 		listAlbums.get(0).addSongToPlayList("Sing for the Moment", listPlayList);
@@ -51,7 +52,7 @@ public class AlbumManagement {
 		play(listPlayList);
 	}
 
-	private static void play(LinkedList<Song> listPlayList) {
+	private static void play(List<Song> listPlayList) {
 		Scanner scanner = new Scanner(System.in);
 		ListIterator<Song> listIterator = listPlayList.listIterator();
 		boolean bExit = false;
@@ -126,17 +127,17 @@ public class AlbumManagement {
 
 	}
 
-	private static void replay(boolean bForward, LinkedList<Song> listPlayList, ListIterator<Song> listIterator) {		
+	private static void replay(boolean bForward, List<Song> listPlayList, ListIterator<Song> listIterator) {		
 		if (bForward) {
 			if (listIterator.hasPrevious()) {
-				System.out.println("\nReplaying " + listIterator.previous());
+				System.out.println("\nReplaying " + listIterator.previous().toString());
 				bForward = false;
 			} else {
 				System.out.println("\nWe have reach to the Start of the Play List");
 			}
 		} else {
 			if (listIterator.hasNext()) {
-				System.out.println("\nReplaying " + listIterator.next());
+				System.out.println("\nReplaying " + listIterator.next().toString());
 				bForward = true;
 			} else {
 				System.out.println("\nWe have reach to the End of the Play List");
@@ -144,7 +145,7 @@ public class AlbumManagement {
 		}
 	}
 	
-	private static void deleteCurrentSong(LinkedList<Song> listPlayList, ListIterator<Song> listIterator) {
+	private static void deleteCurrentSong(List<Song> listPlayList, ListIterator<Song> listIterator) {
 		if(!listPlayList.isEmpty()) {
 			listIterator.remove();
 			if(listIterator.hasNext()) {
@@ -165,7 +166,7 @@ public class AlbumManagement {
 				+ "Please choose:\t");
 	}
 
-	public static void printPlayList(LinkedList<Song> listPlayList) {
+	public static void printPlayList(List<Song> listPlayList) {
 		Iterator<Song> iterator = listPlayList.iterator();
 		System.out.println("\nAvailable song in the Play List");
 		System.out.println("==========================");

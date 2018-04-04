@@ -29,7 +29,7 @@ public class DuyetSoChanLe {
  				break;
  				
 			case "2":							
-				shKieuSo = ChonSoChanLe(shKieuSo);				
+				shKieuSo = ChonSoChanLe(shKieuSo);
 				break;
 				
 			case "3":
@@ -55,7 +55,8 @@ public class DuyetSoChanLe {
 				break;					
 			}
 			
-		}while (!bExitDoWhile);			
+		}while (!bExitDoWhile);		
+		sc.close();
 	}
 	
 	public static short ChonSoChanLe(short shKieuSo) {

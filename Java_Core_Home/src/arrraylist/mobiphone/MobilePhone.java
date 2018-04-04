@@ -134,9 +134,8 @@ public class MobilePhone {
 	}
 
 	private String LayTenTaiKhoan(String sSoDienThoai) {
-		for (int i = 0; i < listContact.size(); i++) {
-			Contact contact = listContact.get(i);
-			if (contact.getsPhoneNumber().equalsIgnoreCase(sSoDienThoai)) {
+		for (Contact contact : listContact) {
+			if(contact.getsPhoneNumber().equalsIgnoreCase(sSoDienThoai)) {
 				return contact.getsPhoneName();
 			}
 		}
@@ -145,9 +144,15 @@ public class MobilePhone {
 	}
 
 	private String LaySoDienThoai(String sTenTaiKhoan) {
-		for (int i = 0; i < listContact.size(); i++) {
-			Contact contact = listContact.get(i);
-			if (contact.getsPhoneName().equalsIgnoreCase(sTenTaiKhoan)) {
+//		for (int i = 0; i < listContact.size(); i++) {
+//			Contact contact = listContact.get(i);
+//			if (contact.getsPhoneName().equalsIgnoreCase(sTenTaiKhoan)) {
+//				return contact.getsPhoneNumber();
+//			}
+//		}
+		
+		for (Contact contact : listContact) {
+			if(contact.getsPhoneName().equalsIgnoreCase(sTenTaiKhoan)) {
 				return contact.getsPhoneNumber();
 			}
 		}
