@@ -1,0 +1,35 @@
++ file pointer is an offset in the file where the next read or write will start from.
++ offset(startByte) is a byte location in the file. But the offset is whether the value's firstbyte is located -- the remaining bytes would follow that first byte sequentially.
++ each set of related data as a record
++ getFilePointer() return current pointer (current offset of this file-> current pointer to the top head of file)
+
++ we have to include an index in our file - that index stores the offset and record length for each location. we also have to include the location ID in the index. every index record has to be the same length
+- reading a location's going to be a two step process.
+a. Firstly, we're gonna get the index record for the location, 
+b. secondly, we're gonna use the index values and read the location data.
+
++ typically, an index contains a unique identifier for each data record, the offset of the record in the file, and the length of the record. Now in Java, that's 12 bytes.
++ Now because of the description, the location record will always be longer than 12 bytes, so the index will be much smaller than the location's data.
++ To access the index record we need by reading it from the file when the user moves to a new location, or we could load the entire index into memory when the application starts. Ideally, we'd want to load the index into memory. accessing memory is much faster than accessing files on disc, so loading the index into memory will always provide better performance.
++ We have to save the offset of the data section, which in our case is the locations, to the file. And that's typically saved near the top of the file.
+
++ when we want to move to a specific offset what we'll do is we'll use the random access file dot seek() method to move the file pointer. When we do, we want to do a bunch of sequential read/writes, we'll start by positioning the file pointer to the offset of where the first read/write will take place.
+
++ The file pointer is always advanced by the number of bytes read or written, so if the next piece of data we want to read/write immediately followed the last piece that we read or wrote, then the file pointer will be already positioned correctly. So in that case, we wouldn't need to call seek() first.
++ we only really have to call the seek() method when we wanna jump to a different offset in the file.
+
++ RWD ==> But generally speaking, it's good practise to have the random access file class handle the synchronisation, when it does matter.
++ so each index record, will contain three integers. The location ID, the offset for the location, and the size or length of the location record. 
++ we're calculating the index size, by multiplying the number of locations by the number of ints contained in each record, in this case three. By the number of bytes contained in an integer.
++ we then calculate the current position of the file pointer to the index size. And we also have to account for the integer, we're about to write to the file, the location section offset, we just calculated. we also have to add the number of bytes to an integer. ==> the end of that line will give us the offset for the location section.
++ we had cast to an int because the file pointer is a long value.
+
++ before we can write the index, we have to write the locations. that's because each index record requires the offset for the location. And, of course, we don't know the offset until we've written the location.
+_ NOW we could write a location and then write the index record for it. And then write the next location and write the index record for it and again and again. But that would actually involve a lot of jumping back and forth in the file. a disc access is expensive, and it's even more expensive when it's not sequential.
+==> what we're gonna do is write all the locations and then we'll write the index as a whole.
+what we have to do is build the index in memory as we write the locations. because we wanna jump back to the file when we finished writing the locations, we'll save the current position of the file pointer, so that we can jump back to it when we want to write the index,
+
++ we've already calculated the offset of the locations data section. And we're gonna assign that to a variable alled start pointer, which will update after writing each location.
++ then we'll look through the locations, write out each location.Create an index for it.And add an index record to a map.
+
++ when we load the index records into memory, the location ID will act as a map key. that's why we don't have to store it in the IndexRecord class.

@@ -1,0 +1,6 @@
+-1-0 , Java computer
+-1-1 , brick building
+-1-2 , top of the hill
+-1-3 , small spring
+-1-4 , beside the stream
+-1-5 , in the forest
