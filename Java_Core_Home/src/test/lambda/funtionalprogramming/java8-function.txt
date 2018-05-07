@@ -1,0 +1,5 @@
+consumer 	==> no return
+predicate	==> return boolean
+function	==> return any data type based on user define + can be chained
+supplier	==> required input data type + can be chained
+UnaryOperator ==> extends from function interface, return same data type as input argument data type
