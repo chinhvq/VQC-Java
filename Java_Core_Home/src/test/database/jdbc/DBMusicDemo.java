@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import test.database.jdbc.model.Artist;
 import test.database.jdbc.model.DataSource;
+import test.database.jdbc.model.InsertRandomArtistRunnable;
 import test.database.jdbc.model.SongArtist;
 
 public class DBMusicDemo {
@@ -63,6 +64,12 @@ public class DBMusicDemo {
 		string = DataSource.TABLE_SONGS;
 		System.out.println("\nNumber of song in table " + string + " = " + dataSource.getCount(string));
 		
+//		System.out.println("Start");
+//		for (int i = 0; i < 10; i++) {
+//			new Thread(new InsertRandomArtistMultiThread("Task-" + (i + 1), i * 10000 + 1 , (i + 1) * 10000)).start();
+//		}
+//		System.out.println("Finished");
+//		
 		dataSource.insertSong("Touch of Grey", "Graceful Dead", "In The Dark", 1);
 		dataSource.insertSong("Like a Rolling Stone", "Bob Dylan", "Bob Dylan 's The Greatest Hits", 1);
 		dataSource.insertSong("Bird Dog", "Everly Brothers", "All-Time Greatest Hits", 1);

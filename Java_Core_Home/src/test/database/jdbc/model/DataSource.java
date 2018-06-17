@@ -97,6 +97,17 @@ public class DataSource {
 	private PreparedStatement queryArtist;
 	private PreparedStatement queryAlbum;
 	private PreparedStatement querySong;
+	
+	private static DataSource instance = new DataSource();
+	
+	public DataSource() {
+	}
+	
+	
+	public static DataSource getInstance() {
+		return instance;
+	}
+
 
 	public boolean open() {
 		try {
@@ -340,7 +351,7 @@ public class DataSource {
 		}
 	}
 
-	private boolean querySong(String title){
+	private boolean querySong(String title) {
 		try {
 			querySong.setString(1, title);
 			ResultSet results = querySong.executeQuery();
@@ -352,7 +363,7 @@ public class DataSource {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
-		}		
+		}
 	}
 
 	public void insertSong(String title, String artist, String album, int track) {
@@ -389,6 +400,40 @@ public class DataSource {
 					System.out.println("Cannot reset Auto commit to true");
 				}
 			}
+		}
+	}
+
+	public boolean insertRandomArtistRange(String prefixName, int startIndex, int endIndex) {
+		String artistName = null;
+		try {
+			for (int i = startIndex; i <= endIndex; i++) {
+				artistName = prefixName + String.valueOf(i);
+				insertIntoArtist.setString(1, artistName);
+				insertIntoArtist.addBatch();
+			}
+			insertIntoArtist.executeBatch();
+			return true;
+		} catch (SQLException e) {
+			System.out.println(Thread.currentThread().getName() + " - Insert Random Artist - Fail : " + e.getMessage());
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public boolean insertRandomArtist(String name) {
+		String artistName = null;
+		try {
+			for (int i = 10001; i <= 100000; i++) {
+				artistName = name + i;
+				insertIntoArtist.setString(1, artistName);
+				insertIntoArtist.addBatch();
+			}
+			insertIntoArtist.executeBatch();
+			return true;
+		} catch (SQLException e) {
+			System.out.println("Insert Random Artist - Fail : " + e.getMessage());
+			e.printStackTrace();
+			return false;
 		}
 	}
 }
