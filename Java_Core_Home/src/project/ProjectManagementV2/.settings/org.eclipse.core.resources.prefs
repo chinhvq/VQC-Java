@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//src/test/projectmanagement/AboutController.java=UTF-8
+encoding//src/test/projectmanagement/address/AddressAddController.java=UTF-8
+encoding//src/test/projectmanagement/address/AddressEditController.java=UTF-8
+encoding//src/test/projectmanagement/address/AddressSearchController.java=UTF-8
+encoding//src/test/projectmanagement/customer/CustomerAddController.java=UTF-8
+encoding//src/test/projectmanagement/customer/CustomerEditController.java=UTF-8
+encoding//src/test/projectmanagement/customer/CustomerSearchController.java=UTF-8
+encoding//src/test/projectmanagement/department/DepartmentAddController.java=UTF-8
+encoding//src/test/projectmanagement/department/DepartmentEditController.java=UTF-8
+encoding//src/test/projectmanagement/department/DepartmentSearchController.java=UTF-8
+encoding//src/test/projectmanagement/employee/EmployeeAddController.java=UTF-8
+encoding//src/test/projectmanagement/employee/EmployeeEditController.java=UTF-8
+encoding//src/test/projectmanagement/employee/EmployeeSearchController.java=UTF-8
+encoding//src/test/projectmanagement/project/ProjectAddController.java=UTF-8
+encoding//src/test/projectmanagement/project/ProjectEditController.java=UTF-8
+encoding//src/test/projectmanagement/project/ProjectSearchController.java=UTF-8

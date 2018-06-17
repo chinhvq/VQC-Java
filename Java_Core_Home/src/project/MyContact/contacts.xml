@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<contacts>
+<contact>
+	<first_name>VUONG</first_name>
+	<last_name>CHINH</last_name>
+	<phone_number>0915668226</phone_number>
+	<notes>MY PHONExxx</notes>
+</contact>
+<contact>
+	<first_name>Office</first_name>
+	<last_name>02</last_name>
+	<phone_number>022822558</phone_number>
+	<notes>My Office 02 Phone Number</notes>
+</contact>
+<contact>
+	<first_name>office</first_name>
+	<last_name>04</last_name>
+	<phone_number>0313822011</phone_number>
+	<notes>My Office 04 Phone Number</notes>
+</contact>
+</contacts>

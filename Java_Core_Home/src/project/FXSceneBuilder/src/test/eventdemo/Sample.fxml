@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="362.0" prefWidth="441.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="test.eventdemo.SampleController">
+   <children>
+      <Button layoutX="195.0" layoutY="134.0" mnemonicParsing="false" onAction="#submit" text="NHẬP">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="139.0" layoutY="54.0" text="Bạn Nhập Chiều Cao" textFill="#3205d3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Height" layoutX="146.0" layoutY="94.0" promptText="CHIỀU CAO">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

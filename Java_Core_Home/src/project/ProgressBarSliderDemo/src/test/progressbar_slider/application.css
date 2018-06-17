@@ -1,0 +1,8 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.label, .button {
+	-fx-background-color: greenyellow ;
+	-fx-font-weight: bold;
+	-fx-font-size: 14px;
+	-fx-text-alignment: center;
+}
+

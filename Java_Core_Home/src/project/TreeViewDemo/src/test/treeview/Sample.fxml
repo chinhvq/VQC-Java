@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="397.0" prefWidth="436.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.treeview.SampleController">
+   <children>
+      <TreeView fx:id="treeView" layoutX="14.0" layoutY="28.0" prefHeight="303.0" prefWidth="211.0" />
+      <ComboBox fx:id="comboBox" layoutX="255.0" layoutY="48.0" onAction="#comboBoxChanged" prefWidth="150.0" promptText="LANGUAGE" />
+      <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" layoutX="255.0" layoutY="86.0" prefHeight="80.0" prefWidth="150.0" text="Ngôn ngữ của bạn" wrapText="true" />
+   </children>
+</AnchorPane>

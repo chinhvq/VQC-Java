@@ -1,0 +1,71 @@
+[SQLITE_CONSTRAINT_NOTNULL]  A NOT NULL constraint failed (NOT NULL constraint failed: artists.name)
+
+100 - 10.000 artist
+Time need - 1306111 ms = 21.8 mins
+Insert Random Artist - Successfully
+
+10.001 - 100.000 artist
+1526055049421	Task 2
+1526055049441	Task 3
+1526055049454	Task 6
+1526055049495	Task 9
+1526055049499	Task 8
+1526055049499	Task 5
+1526055049502	Task 7
+1526055049500	Task 1
+1526055049500	Task 4
+
+1526055049421	Task 2
+1526055049441	Task 3
+1526055049454	Task 6
+1526055049495	Task 9
+1526055049499	Task 8
+1526055049499	Task 5
+1526055049502	Task 7
+1526055049500	Task 1
+1526055049500	Task 4
+Insert Random Artist - Fail : [SQLITE_CONSTRAINT_NOTNULL]  A NOT NULL constraint failed (NOT NULL constraint failed: artists.name)
+1526056377021	Task 4
+Time need - 1327521 ms -> = 22 seconds -	Task 4
+Insert Random Artist - Fail : [SQLITE_CONSTRAINT_NOTNULL]  A NOT NULL constraint failed (NOT NULL constraint failed: artists.name)
+1526056377028	Task 1
+Time need - 1327528 ms -> = 22 seconds -	Task 1
+org.sqlite.SQLiteException: [SQLITE_CONSTRAINT_NOTNULL]  A NOT NULL constraint failed (NOT NULL constraint failed: artists.name)
+	at org.sqlite.core.DB.newSQLException(DB.java:909)
+	at org.sqlite.core.DB.newSQLException(DB.java:921)
+	at org.sqlite.core.DB.throwex(DB.java:886)
+	at org.sqlite.core.DB.executeBatch(DB.java:774)
+	at org.sqlite.core.CorePreparedStatement.executeBatch(CorePreparedStatement.java:79)
+	at test.database.musicdbmanagement.model.DataSource.insertRandomArtistRange(DataSource.java:477)
+	at test.database.musicdbmanagement.InsertRandomArtistMultiThread.call(MusicDBController.java:143)
+	at test.database.musicdbmanagement.InsertRandomArtistMultiThread.call(MusicDBController.java:1)
+	at javafx.concurrent.Task$TaskCallable.call(Task.java:1423)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+org.sqlite.SQLiteException: [SQLITE_CONSTRAINT_NOTNULL]  A NOT NULL constraint failed (NOT NULL constraint failed: artists.name)
+	at org.sqlite.core.DB.newSQLException(DB.java:909)
+	at org.sqlite.core.DB.newSQLException(DB.java:921)
+	at org.sqlite.core.DB.throwex(DB.java:886)
+	at org.sqlite.core.DB.executeBatch(DB.java:774)
+	at org.sqlite.core.CorePreparedStatement.executeBatch(CorePreparedStatement.java:79)
+	at test.database.musicdbmanagement.model.DataSource.insertRandomArtistRange(DataSource.java:477)
+	at test.database.musicdbmanagement.InsertRandomArtistMultiThread.call(MusicDBController.java:143)
+	at test.database.musicdbmanagement.InsertRandomArtistMultiThread.call(MusicDBController.java:1)
+	at javafx.concurrent.Task$TaskCallable.call(Task.java:1423)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+1526056377038	Task 2
+Time need - 1327617 ms -> = 22 seconds -	Task 2
+Insert Random Artist - SuccessfullyTask 2
+1526064177816	Task 7
+Time need - 9128314 ms -> = 152 seconds -	Task 7
+Insert Random Artist - SuccessfullyTask 7
+1526071412336	Task 5
+Time need - 16362837 ms -> = 272 seconds -	Task 5
+Insert Random Artist - SuccessfullyTask 5
+1526077909483	Task 8
+Time need - 22859984 ms -> = 380 seconds -	Task 8
+Insert Random Artist - SuccessfullyTask 8
+1526083412082	Task 9
+Time need - 28362587 ms -> = 472 seconds -	Task 9
+Insert Random Artist - SuccessfullyTask 9

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="mainPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="test.mycontact.MyContactController">
+	<top>
+		<MenuBar>
+			<menus>
+				<Menu text="Contact">
+					<items>
+						<MenuItem onAction="#showAddContactDialog" text="Add" />
+					</items>
+					<items>
+						<MenuItem onAction="#showEditContactDialog" text="Edit" />
+					</items>
+					<items>
+						<MenuItem onAction="#showDeleteContact" text="Delete" />
+					</items>
+					<items>
+						<MenuItem onAction="#exitApplication" text="Exit" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<center>
+		<TableView fx:id="contactsTable" BorderPane.alignment="CENTER">
+			<columnResizePolicy>
+				<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+			</columnResizePolicy>
+			<columns>
+				<TableColumn text="First Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="firstName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="Last Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="lastName" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="Phone Number">
+					<cellValueFactory>
+						<PropertyValueFactory property="phoneNumber" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn text="Notes">
+					<cellValueFactory>
+						<PropertyValueFactory property="notes" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+	</center>
+
+</BorderPane>
